@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+
+    {% if data %}
+        {{ data | safe}}
+    {% else %} 
+        <h1>No data available</h1>
+        
+    {% endif %}
+    <div>
+        <a href="{% url 'edit_page' title=title %}">Edit this page</a>
+    </div>
+        
+{% endblock %}
